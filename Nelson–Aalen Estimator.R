@@ -50,8 +50,6 @@ plot(
 
 # 5. Group-wise Nelson–Aalen estimator (Example: Sex)
 
-lung$sex <- factor(lung$sex, labels = c("Male", "Female"))
-
 na_fit_group <- survfit(Surv(time, status) ~ sex,
                         data = lung,
                         type = "fh")
