@@ -1,7 +1,6 @@
-################################################ 
+
 # LAB: Gompertz Parametric Regression 
 # Dataset: lung (survival package) 
-################################################ 
 
 library(survival) 
 library(flexsurv) 
