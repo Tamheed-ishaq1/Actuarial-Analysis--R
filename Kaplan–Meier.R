@@ -13,7 +13,7 @@ library(survival)
 lung
 
 # Convert event variable: (1=censored, 2=death) → (0/1)
-lung$status2 <- ifelse(lung$status == 2, 1, 0)
+lung$status <- ifelse(lung$status == 2, 1, 0)
 
 # Inspect data
 head(lung)
@@ -45,8 +45,6 @@ plot(
 )
 
 # 5. Group-wise KM curves (Example: Sex)
-
-lung$sex <- factor(lung$sex, labels = c("Male", "Female"))
 
 km_fit_group <- survfit(Surv(time, status2) ~ sex, data = lung)
 
