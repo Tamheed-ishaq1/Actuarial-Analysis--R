@@ -46,7 +46,9 @@ plot(
 
 # 5. Group-wise KM curves (Example: Sex)
 
-km_fit_group <- survfit(Surv(time, status2) ~ sex, data = lung)
+lung$sex <- factor(lung$sex, labels = c("Male", "Female"))
+
+km_fit_group <- survfit(Surv(time, status) ~ sex, data = lung)
 
 # Plot group curves
 plot(
