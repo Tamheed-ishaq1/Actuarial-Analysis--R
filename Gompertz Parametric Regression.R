@@ -6,7 +6,7 @@ library(survival)
 library(flexsurv) 
 
 # Load and clean data 
-data("lung") 
+lung 
 lung$event <- ifelse(lung$status == 2, 1, 0) 
 
 # Fit Gompertz regression model 
